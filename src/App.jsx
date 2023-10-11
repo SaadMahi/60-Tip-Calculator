@@ -39,9 +39,12 @@ function App() {
         How did your friend liked the service?
       </SelectPercentage>
 
-      <TotalBill billAmount={billPuller} tip={tip} />
-
-      {billPuller > 0 && <ResetBtn resetFunc={resetHandler} />}
+      {billPuller > 0 && (
+        <>
+          <TotalBill billAmount={billPuller} tip={tip} />
+          <ResetBtn resetFunc={resetHandler} />
+        </>
+      )}
     </>
   );
 }
