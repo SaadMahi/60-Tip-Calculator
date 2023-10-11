@@ -22,7 +22,7 @@ function App() {
 
   // * reset function handler
   const resetHandler = () => {
-    setBillPuller('');
+    setBillPuller(0);
     setPercentage1(0);
     setPercentage2(0);
   };
@@ -41,7 +41,7 @@ function App() {
 
       <TotalBill billAmount={billPuller} tip={tip} />
 
-      <ResetBtn resetFunc={resetHandler} />
+      {billPuller > 0 && <ResetBtn resetFunc={resetHandler} />}
     </>
   );
 }
